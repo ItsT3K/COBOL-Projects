@@ -28,7 +28,7 @@
                         15      FILLER                  PIC X VALUE '-'.
                         15      WS-FORMATTED-DY         PIC 9(2).
                         15      FILLER                  PIC X VALUE ' '.
-        01 WS-FORMATTED-TM
+        01 WS-FORMATTED-TM.
                         15      WS-FORMATTED-HOUR       PIC 9(2).
                         15      FILLER                  PIC X VALUE ':'.
                         15      WS-FORMATTED-MINS       PIC 9(2).
@@ -47,12 +47,14 @@
                 MOVE WS-DATETIME(11:2)  TO WS-FORMATTED-MINS.
                 MOVE WS-DATETIME(13:2)  TO WS-FORMATTED-SEC.
                 MOVE WS-DATETIME(15:2)  TO WS-FORMATTED-MS.
-
+      / Display the current date on the terminal
                 DISPLAY 'Hello There'.
                 DISPLAY ' '.
                 DISPLAY 'Todays date is'.
                 DISPLAY WS-FORMATTED-DT.
+      / Display the current time on the terminal
                 DISPLAY ' '.
                 DISPLAY 'and the time is'.
                 DISPLAY WS-FORMATTED-TM.
         STOP RUN.
+
